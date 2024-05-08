@@ -8,3 +8,9 @@ app = func.FunctionApp()
 app.register_functions(Blueprint) 
 app.register_functions(HttpExample)
 app.register_functions(GmailAuth)
+
+@app.function_name(name="HttpTrigger1")
+@app.route(route="req")
+def main(req):
+    user = req.params.get("user")
+    return f"Hello, {user}!"

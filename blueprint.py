@@ -4,12 +4,10 @@
 # 
 # Please refer to https://aka.ms/azure-functions-python-blueprints
 
-
 import azure.functions as func
 import logging
 
 blueprint = func.Blueprint()
-
 
 @blueprint.route(route="http_trigger_example", auth_level=func.AuthLevel.ANONYMOUS)
 def http_trigger_example(req: func.HttpRequest) -> func.HttpResponse:

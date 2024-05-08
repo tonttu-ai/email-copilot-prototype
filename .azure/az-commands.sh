@@ -64,3 +64,9 @@ az keyvault secret show --vault-name $KV_NAME --name "GmailClientSecret"
 az functionapp config appsettings set --name $FUNCTION_APP_NAME --resource-group $RESOURCE_GROUP --settings KEYVAULT_URL=$KEYVAULT_URI
 
 az functionapp config appsettings list --name $FUNCTION_APP_NAME --resource-group $RESOURCE_GROUP
+
+az keyvault set-policy --name $KV_NAME --resource-group $RG_NAME --object-id $FUNCTION_APP_PRINCIPAL_ID --secret-permissions get list
+
+# Retrieve the Key Vault URL
+az keyvault show --name $KV_NAME --resource-group $RG_NAME
+
