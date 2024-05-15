@@ -1,12 +1,10 @@
-import azure.functions as func
-import datetime
-import json
+import os
 import logging
 from google_auth_oauthlib.flow import Flow
 from google.oauth2.credentials import Credentials
 from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
-import os
+import azure.functions as func
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 
